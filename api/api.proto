@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package api;
+
+service TodoService {
+    rpc GetTodo (TodoRequest) returns (TodoResponse) {}
+}
+
+message Todo {
+    int32 id = 1;
+    string title = 2;
+    string description = 3;
+}
+
+message TodoRequest {}
+
+message TodoResponse {
+    Todo todos = 1;    
+}
